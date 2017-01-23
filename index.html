@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Markdown Simple editor</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/editormd.css" />
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <h1>Markdown Simple editor</h1>
+        </header>
+
+        <!-- editor -->
+        <div id="test-editormd">
+            <textarea style="display:none;">[TOC]
+### Markdown Simple editor
+
+#### Disabled options
+- TeX (Based on KaTeX);
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+
+#### Editor directory
+	editor/
+		css/
+		fonts/
+		images/
+		js/
+		lib/
+		plugins/
+
+#### Example
+1. aaa
+2. bbb
+3. ccc
+</textarea>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/editormd.js"></script>
+    <script type="text/javascript">
+		var testEditor;
+        $(function() {
+            testEditor = editormd("test-editormd", {
+                width   : "90%",
+                height  : 640,
+                syncScrolling : "single",
+                path    : "lib/"
+            });
+        });
+    </script>
+    <!-- English -->
+	<script src="js/languages/en.js"></script>
+</body>
+</html>
